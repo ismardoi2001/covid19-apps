@@ -8,7 +8,9 @@ function App() {
   return (
     <div>
      <Navbar/>
+
      <InfoPanel/>
+     
      <barChart/>
     </div>
   );
