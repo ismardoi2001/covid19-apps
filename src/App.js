@@ -8,22 +8,27 @@ import {fetchData} from './api';
 //import InfoPanel from './Components/InfoPanel';
 //function App() {
 class App extends React.Component {  
+  state ={
+    data:{},
+  }
 
   async componentWillMount() {
     const data = await fetchData();
-
+    this.setState({ data:fetchData});
+  
     console.log(data);
   }
   render(){
+    const {data} = this.setState;
   return (
    
 <div className={styles.container}>
-  <Cards/>
+  <Cards data={data}/>
  <CountryPicker/>
  <Chart/>
-    </div>
+ </div>
   );
-  )
+  }
 }
-
+  
 export default App;
