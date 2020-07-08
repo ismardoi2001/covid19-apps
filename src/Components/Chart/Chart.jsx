@@ -12,7 +12,6 @@ const [dailyData, setDailyData] = useState({});
             setDailyData = (await fetchDailyData());
 
         }
-
         fetchAPI();
     });
 
