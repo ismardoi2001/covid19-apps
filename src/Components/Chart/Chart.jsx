@@ -12,6 +12,7 @@ const [dailyData, setDailyData] = useState({});
             setDailyData = (await fetchDailyData());
 
         }
+
         fetchAPI();
     });
 
@@ -20,13 +21,11 @@ const [dailyData, setDailyData] = useState({});
         ?(
             <Line
             data={{
-                labels: '',
+                labels: dailyData(({ date })) => Date),
                 datasets:[{}, {}],
             }}
-          />  
+          />) : null  
         );
-
-    );
         
     return(
             <h1>Chart</h1>
