@@ -12,6 +12,16 @@ const url = 'https://covid19.mathdro.id/api';
      } catch (error) {
 
       }
+
+      export const fetchDailyDate = async () = {
+           try {
+               const {data} = await axios.get('${url}/daily');
+
+                console.log(data);
+           } catch (error) {
+               
+           }
+      }
       
   }
 
