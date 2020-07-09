@@ -7,10 +7,10 @@ import styles from './Chart.module.css';
 export const Chart = () => {
 const [dailyData, setDailyData] = useState({});
 
+
     useEffect(() => {
         const fetchAPI = async () => {
             setDailyData = (await fetchDailyData());
-
 
         }
         fetchAPI();
