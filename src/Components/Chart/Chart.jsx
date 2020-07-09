@@ -3,7 +3,6 @@ import { fetchDailyData, fetchData} from '../../api';
 import {line, Bar} from 'react-chartjs2';
 import styles from './Chart.module.css';
 
-
 export const Chart = () => {
 const [dailyData, setDailyData] = useState({});
 
