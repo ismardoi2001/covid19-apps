@@ -17,9 +17,12 @@ const url = 'https://covid19.mathdro.id/api';
            try {
                const {data} = await axios.get('${url}/daily');
 
+
+               
                 console.log(data);
            } catch (error) {
                
+
            }
       }
       
