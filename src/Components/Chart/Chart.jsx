@@ -15,7 +15,6 @@ const [dailyData, setDailyData] = useState({});
         fetchAPI();
     }
 
-
     const lineChart = (
         dailyData[0]
         ?(
