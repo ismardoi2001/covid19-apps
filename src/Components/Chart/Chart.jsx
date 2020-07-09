@@ -11,9 +11,11 @@ const [dailyData, setDailyData] = useState({});
         const fetchAPI = async () => {
             setDailyData = (await fetchDailyData());
 
+
         }
         fetchAPI();
-    });
+    }
+
 
     const lineChart = (
         dailyData[0]
