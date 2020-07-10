@@ -1,10 +1,13 @@
-import React from 'React';
+import React from 'react';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import CountUp from 'react-countup';
 
 import styles from './Cards.module.css';
 
-
+const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
+  if (!confirmed) {
+    return 'Loading...';
+  }
 
   return (
     <div className={styles.container}>
@@ -61,4 +64,4 @@ import styles from './Cards.module.css';
     </div>
   );
 };
-export default Cards;
+export default Card;
