@@ -1,14 +1,10 @@
-import React from 'react';
+import React from 'React';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import CountUp from 'react-countup';
-import cx from 'classnames';
 
 import styles from './Cards.module.css';
 
-const Info = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
-  if (!confirmed) {
-    return 'Loading...';
-  }
+
 
   return (
     <div className={styles.container}>
@@ -65,4 +61,4 @@ const Info = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     </div>
   );
 };
-export default Info;
+export default Cards;
