@@ -1,43 +1,36 @@
-import React from 'react';
-import Cards from './Components/Cards/Cards.jsx';
-import Chart from './Components/Chart/Chart.jsx';
-import CountryPicker from './Components/CountryPicker/CountryPicker.jsx';
+import React from 'react';  
+import styles from './App.module.css'  
+import {Cards, Charts, CountryPicker } from './Components'  
+import {fetchData} from './API';//we dont have to specify index file name if your file 
 
-import { fetchData } from './api/';
-import styles from './App.module.css';
+import coronaImage from './images/image.png';
+class App extends React.Component {  
+  state = {         
+  data: {},  
+  country: '',  
+  }  
+  async componentDidMount(){  
+      const data = await fetchData();  
+      //console.log(fetchedData);  
+      this.setState({data});  
+  }  
 
-import image from './images/image.png';
+   handleCountryChange = async (country) => {          
+      const data = await fetchData(country);  
+      this.setState({data: data, country: country});  
+   }  
 
-class App extends React.Component {
-  state = {
-    data: {},
-    country: '',
-  }
+  render(){  
+      const {data, country } = this.state;  
+      return(  
+      <div  className={styles.container} >  
+          <img className={styles.image} src={coronaImage} alt="Covid-19"/>  
+          <Cards data={data}/>  
+          <CountryPicker handleCountryChange={this.handleCountryChange}/>  
+          <Charts data={data} country={country}/>  
+      </div>  
+  )  
+}  
+}  
 
-  async componentDidMount() {
-    const data = await fetchData();
-
-    this.setState({ data });
-  }
-
-  handleCountryChange = async (country) => {
-    const data = await fetchData(country);
-
-    this.setState({ data, country: country });
-  }
-
-  render() {
-    const { data, country } = this.state;
-
-    return (
-      <div className={styles.container}>
-        <img className={styles.image} src={image} alt="COVID-19" />
-        <Cards data={data} />
-        <CountryPicker handleCountryChange={this.handleCountryChange} />
-        <Chart data={data} country={country} /> 
-      </div>
-    );
-  }
-}
-
-export default App;
+export default App; 
