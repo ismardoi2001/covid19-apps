@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import Cards from './Components/Cards/Cards.jsx';
 import Chart from './Components/Chart/Chart.jsx';
 import CountryPicker from './Components/CountryPicker/CountryPicker.jsx';
